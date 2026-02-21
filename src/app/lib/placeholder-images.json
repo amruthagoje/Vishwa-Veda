@@ -4,25 +4,25 @@
     {
       "id": "hero-bg",
       "description": "Ayurvedic herbs and oils in a serene setting",
-      "imageUrl": "https://picsum.photos/seed/ayurveda1/1200/800",
+      "imageUrl": "https://images.unsplash.com/photo-1664549760921-2198b054a592?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YXl1cnZlZGF8ZW58MHx8fHwxNzcxNjc2NTc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "Ayurveda nature"
     },
     {
       "id": "doctor-1",
       "description": "Ayurvedic Doctor smiling",
-      "imageUrl": "https://picsum.photos/seed/doc1/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1659353887977-c310d90c751a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N0b3IlMjBheXVydmVkYXxlbnwwfHx8fDE3NzE2NzA3Njl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "doctor ayurveda"
     },
     {
       "id": "doctor-2",
       "description": "Experienced Ayurvedic practitioner",
-      "imageUrl": "https://picsum.photos/seed/doc2/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1706031539477-9feade211fe5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YXl1cnZlZGljJTIwcHJhY3RpdGlvbmVyfGVufDB8fHx8MTc3MTY3MDc2OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "ayurvedic practitioner"
     },
     {
       "id": "therapy-1",
       "description": "Panchakarma massage therapy",
-      "imageUrl": "https://picsum.photos/seed/therapy1/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1708026478860-8ed9838e9995?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYW5jaGFrYXJtYSUyMHRoZXJhcHl8ZW58MHx8fHwxNzcxNjcwNzcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "panchakarma therapy"
     }
   ]
