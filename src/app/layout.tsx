@@ -1,4 +1,3 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
@@ -8,6 +7,10 @@ import { Toaster } from '@/components/ui/toaster';
 export const metadata: Metadata = {
   title: 'Vishwa Veda | Holistic Ayurvedic Healthcare',
   description: 'Manage your Ayurvedic therapy, book doctors, and chat with AI for personalized wellness.',
+  icons: {
+    icon: '/logo png.png',
+    apple: '/logo png.png',
+  },
 };
 
 export default function RootLayout({

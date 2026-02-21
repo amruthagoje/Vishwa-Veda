@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Search, Activity, Calendar, ShieldCheck } from 'lucide-react';
@@ -7,14 +6,15 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
-  const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg');
+  const heroImg = PlaceHolderImages?.find(img => img.id === 'hero-bg');
+  const therapyImg = PlaceHolderImages?.find(img => img.id === 'therapy-1');
 
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          {heroImg && (
+          {heroImg ? (
             <Image
               src={heroImg.imageUrl}
               alt={heroImg.description}
@@ -23,6 +23,8 @@ export default function Home() {
               priority
               data-ai-hint={heroImg.imageHint}
             />
+          ) : (
+            <div className="w-full h-full bg-primary/20" />
           )}
         </div>
         <div className="container relative z-10 mx-auto px-4 text-center">
@@ -105,13 +107,17 @@ export default function Home() {
           </div>
           <div className="lg:w-1/2">
             <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl">
-              <Image 
-                src={PlaceHolderImages.find(img => img.id === 'therapy-1')?.imageUrl || ''} 
-                alt="Therapy" 
-                fill 
-                className="object-cover"
-                data-ai-hint="ayurveda massage"
-              />
+              {therapyImg ? (
+                <Image 
+                  src={therapyImg.imageUrl} 
+                  alt={therapyImg.description} 
+                  fill 
+                  className="object-cover"
+                  data-ai-hint={therapyImg.imageHint}
+                />
+              ) : (
+                <div className="w-full h-full bg-muted" />
+              )}
             </div>
           </div>
         </div>

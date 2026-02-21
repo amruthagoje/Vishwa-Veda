@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -111,53 +110,62 @@ export default function DoctorSearch() {
 
       {filteredDoctors.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filteredDoctors.map((doc) => (
-            <Card key={doc.id} className="overflow-hidden hover:shadow-xl transition-all border-primary/5 flex flex-col">
-              <div className="relative h-48 w-full bg-muted">
-                <Image 
-                  src={PlaceHolderImages.find(img => img.id === doc.imgId)?.imageUrl || ''} 
-                  alt={doc.name} 
-                  fill 
-                  className="object-cover"
-                  data-ai-hint="doctor ayurvedic portrait"
-                />
-                <Badge className="absolute top-3 right-3 bg-white/90 text-primary hover:bg-white">
-                  {doc.price}
-                </Badge>
-              </div>
-              <CardHeader className="p-5">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-lg text-primary">{doc.name}</CardTitle>
-                    <p className="text-sm text-accent font-medium">{doc.specialty}</p>
+          {filteredDoctors.map((doc) => {
+            const doctorImg = PlaceHolderImages?.find(img => img.id === doc.imgId);
+            return (
+              <Card key={doc.id} className="overflow-hidden hover:shadow-xl transition-all border-primary/5 flex flex-col">
+                <div className="relative h-48 w-full bg-muted">
+                  {doctorImg ? (
+                    <Image 
+                      src={doctorImg.imageUrl} 
+                      alt={doc.name} 
+                      fill 
+                      className="object-cover"
+                      data-ai-hint={doctorImg.imageHint}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-primary/10 flex items-center justify-center text-primary/30">
+                      <Star className="h-10 w-10" />
+                    </div>
+                  )}
+                  <Badge className="absolute top-3 right-3 bg-white/90 text-primary hover:bg-white">
+                    {doc.price}
+                  </Badge>
+                </div>
+                <CardHeader className="p-5">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="text-lg text-primary">{doc.name}</CardTitle>
+                      <p className="text-sm text-accent font-medium">{doc.specialty}</p>
+                    </div>
+                    <div className="flex items-center gap-1 text-xs font-bold bg-accent/10 px-2 py-1 rounded text-accent">
+                      <Star className="h-3 w-3 fill-accent" />
+                      {doc.rating}
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1 text-xs font-bold bg-accent/10 px-2 py-1 rounded text-accent">
-                    <Star className="h-3 w-3 fill-accent" />
-                    {doc.rating}
+                </CardHeader>
+                <CardContent className="px-5 pb-5 flex-1">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                    <MapPin className="h-4 w-4 text-accent" />
+                    {doc.city}
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent className="px-5 pb-5 flex-1">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                  <MapPin className="h-4 w-4 text-accent" />
-                  {doc.city}
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {doc.tags.map(tag => (
-                    <Badge key={tag} variant="secondary" className="bg-secondary/10 text-secondary-foreground text-[10px] font-bold">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter className="p-5 pt-0">
-                <Button className="w-full gap-2 bg-primary">
-                  <CalendarCheck className="h-4 w-4" />
-                  Book Consultation
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+                  <div className="flex flex-wrap gap-2">
+                    {doc.tags.map(tag => (
+                      <Badge key={tag} variant="secondary" className="bg-secondary/10 text-secondary-foreground text-[10px] font-bold">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="p-5 pt-0">
+                  <Button className="w-full gap-2 bg-primary">
+                    <CalendarCheck className="h-4 w-4" />
+                    Book Consultation
+                  </Button>
+                </CardFooter>
+              </Card>
+            );
+          })}
         </div>
       ) : (
         <div className="text-center py-24 bg-muted/20 rounded-3xl">

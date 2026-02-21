@@ -1,10 +1,10 @@
-
 'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Search, Calendar, User, LayoutDashboard, Home, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -24,7 +24,15 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative w-8 h-8 overflow-hidden rounded-md bg-primary/5 p-1">
+              <Image 
+                src="/logo png.png" 
+                alt="Vishwa Veda" 
+                fill 
+                className="object-contain transition-transform group-hover:scale-110"
+              />
+            </div>
             <span className="text-2xl font-bold text-primary font-headline">Vishwa Veda</span>
           </Link>
 
