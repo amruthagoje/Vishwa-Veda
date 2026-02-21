@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Ayurvedic herbs and oils in a serene setting",
+      "imageUrl": "https://picsum.photos/seed/ayurveda1/1200/800",
+      "imageHint": "Ayurveda nature"
+    },
+    {
+      "id": "doctor-1",
+      "description": "Ayurvedic Doctor smiling",
+      "imageUrl": "https://picsum.photos/seed/doc1/400/400",
+      "imageHint": "doctor ayurveda"
+    },
+    {
+      "id": "doctor-2",
+      "description": "Experienced Ayurvedic practitioner",
+      "imageUrl": "https://picsum.photos/seed/doc2/400/400",
+      "imageHint": "ayurvedic practitioner"
+    },
+    {
+      "id": "therapy-1",
+      "description": "Panchakarma massage therapy",
+      "imageUrl": "https://picsum.photos/seed/therapy1/600/400",
+      "imageHint": "panchakarma therapy"
+    }
+  ]
+}
